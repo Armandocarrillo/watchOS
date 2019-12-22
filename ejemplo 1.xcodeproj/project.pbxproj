@@ -22,6 +22,7 @@
 		1058E08923AAC7A60030B2CB /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058E08823AAC7A60030B2CB /* NotificationController.swift */; };
 		1058E08B23AAC7A80030B2CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1058E08A23AAC7A80030B2CB /* Assets.xcassets */; };
 		1058E09C23AD08050030B2CB /* NoteSelectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058E09B23AD08050030B2CB /* NoteSelectRow.swift */; };
+		1058E09E23AF47F80030B2CB /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058E09D23AF47F80030B2CB /* DetailInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		1058E08C23AAC7A80030B2CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1058E08D23AAC7A80030B2CB /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		1058E09B23AD08050030B2CB /* NoteSelectRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoteSelectRow.swift; path = "ejemplo 1 WatchKit App/NoteSelectRow.swift"; sourceTree = SOURCE_ROOT; };
+		1058E09D23AF47F80030B2CB /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				1058E08A23AAC7A80030B2CB /* Assets.xcassets */,
 				1058E08C23AAC7A80030B2CB /* Info.plist */,
 				1058E08D23AAC7A80030B2CB /* PushNotificationPayload.apns */,
+				1058E09D23AF47F80030B2CB /* DetailInterfaceController.swift */,
 			);
 			path = "ejemplo 1 WatchKit Extension";
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				1058E08923AAC7A60030B2CB /* NotificationController.swift in Sources */,
 				1058E08723AAC7A60030B2CB /* ExtensionDelegate.swift in Sources */,
 				1058E08523AAC7A60030B2CB /* InterfaceController.swift in Sources */,
+				1058E09E23AF47F80030B2CB /* DetailInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

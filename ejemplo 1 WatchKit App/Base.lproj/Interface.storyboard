@@ -11,7 +11,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="ejemplo_1_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <table alignment="left" id="eUd-N3-T9g">
+                        <table alignment="left" pagingScroll="YES" id="eUd-N3-T9g">
                             <items>
                                 <tableRow identifier="Row" id="H0A-x3-gvx" customClass="NoteSelectRow" customModule="ejemplo_1_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="RpV-0G-2Lx">
@@ -21,6 +21,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="textLabel" destination="sRK-xH-UO2" id="OrN-wy-Qet"/>
+                                        <segue destination="Pes-XS-5lW" kind="push" id="02s-aD-CKB"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -28,7 +29,7 @@
                         <button width="1" alignment="left" title="Add New Note" id="ayo-jy-967">
                             <color key="backgroundColor" red="0.84948048857868019" green="0.16352465152840381" blue="0.49569423944418467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="addNewNote" destination="AgC-eL-Hgc" id="QdV-g7-dAQ"/>
+                                <action selector="addNewNote" destination="AgC-eL-Hgc" id="DHa-Vg-q4V"/>
                             </connections>
                         </button>
                     </items>
@@ -38,6 +39,20 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Detail Interface Controller-->
+        <scene sceneID="NeE-IH-OXV">
+            <objects>
+                <controller id="Pes-XS-5lW" customClass="DetailInterfaceController" customModule="ejemplo_1_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" numberOfLines="0" id="vEP-f7-ywq"/>
+                    </items>
+                    <connections>
+                        <outlet property="textLabel" destination="vEP-f7-ywq" id="9QJ-2a-9oz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="523" y="345"/>
         </scene>
     </scenes>
 </document>
