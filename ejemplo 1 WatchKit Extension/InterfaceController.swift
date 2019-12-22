@@ -14,12 +14,19 @@ import Foundation
 class InterfaceController: WKInterfaceController {
     @IBOutlet var table: WKInterfaceTable!
     var notes = [String]()
+    var savePath = InterfaceController.getDocumentsDirectory().appendingPathComponent("notes")//llama la clase inerfaceController utiliza el metodo getDocumentsDirectory que esta static y agregue notas
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context) //arga la pantalla graafica
         // Configure interface objects here.
         /*(cambio por notes.count
         table.setNumberOfRows(10, withRowType: "Row")//en el objeto "table" llama la funcion definida en WatchKit "setNumber..."(acepta un parametro entero y llama al identificador Row) )*/
+        do {
+        let data = try Data(contentsOf: savePath) //toma los datos de la url 
+            notes = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [String] ?? [String]()//?? operador de funcion nula, haces los de laa derecha, sino puedes has lo de laa izquierda
+        } catch {
+           // do nothing; notes is already an empty array
+        }
         
         table.setNumberOfRows(notes.count, withRowType: "Row")
 
@@ -53,6 +60,9 @@ class InterfaceController: WKInterfaceController {
     return ["index": String(rowIndex + 1), "note": notes[rowIndex]]//index es el numero que viene de la tabla y note es la nota tomada
         
     }
+    static func getDocumentsDirectory() -> URL { let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)//url del directorio de la aplicacion, es static para evitar que metodo getDocumentsDirectory use funciones aun no definidas
+       return paths[0]
+    }
     
     @IBAction func addNewNote() {
         // 1: request user input
@@ -67,6 +77,14 @@ class InterfaceController: WKInterfaceController {
         self.set(row: self.notes.count, to: result)//coloca texto
         // 5: append the new note to our array
         self.notes.append(result)//la guarda en un arreglo
+        
+        do {//ciclo do
+        let data = try NSKeyedArchiver.archivedData(withRootObject: self.notes, requiringSecureCoding: false)//NSKeyedArchiver guarda nuestras notas en tipo dato binario en el arreglo
+        try data.write(to: self.savePath)// lo escribe en la url
+        } catch { //si se interrumpe el ciclo do
+        print("Failed to save data: \(error.localizedDescription).")//se tomara el error de guardado/escritura y se imprimira
+            
+        }
             
         }
     }
