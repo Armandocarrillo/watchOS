@@ -10,6 +10,7 @@ import WatchKit
 
 class NoteSelectRow: NSObject {
     
-    @IBOutlet var textLabel: WKInterfaceLabel!
+    @IBOutlet var textLabel: WKInterfaceLabel!//hacer comentarios
+    
     
 }
